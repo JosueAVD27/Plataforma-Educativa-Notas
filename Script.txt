@@ -1,0 +1,71 @@
+CREATE TABLE `tipousuario` (
+  `idTipo` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `tipo` varchar(20) NOT NULL
+)
+
+CREATE TABLE `estados` (
+ `idEstado` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `estado` varchar(20) NOT NULL
+)
+
+CREATE TABLE `usuarios` (
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(20) NOT NULL,
+  `nombreUsuario` varchar(50) NOT NULL,
+  `apellidoUsuario` varchar(50) NOT NULL,
+  `claveUsuario` varchar(100) NOT NULL,
+  `cedulaUsuario` char(10) NOT NULL,
+  `telefonoUsuario` char(10) NOT NULL,
+  `correoUsuario` varchar(100) NOT NULL,
+  `fotoUsuario` longblob NOT NULL,
+  `idTipo` int(11) NOT NULL,
+  `idEstado` int(11) NOT NULL,
+    FOREIGN KEY (idTipo) REFERENCES tipousuario (idTipo),
+    FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
+)
+
+CREATE TABLE `notas` (
+  `idNotas` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idUsuario` int(11) NOT NULL,
+  `nota1` double NOT NULL,
+  `nota2` double NOT NULL,
+  `nota3` double NOT NULL,
+    FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario)
+)
+
+CREATE TABLE `materia` (
+  `idMateria` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nrc` int(4) NOT NULL,
+  `nombreMateria` varchar(30) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idEstado` int(11) NOT NULL,
+   `idNotas` int(11) NOT NULL,
+    FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario),
+    FOREIGN KEY (idEstado) REFERENCES estados (idEstado),
+    FOREIGN KEY (idNotas) REFERENCES notas (idNotas) 
+)
+
+CREATE TABLE `curso` (
+  `idCurso` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombreCurso` varchar(30) NOT NULL,
+  `descripcionCurso` varchar(150) NOT NULL,
+  `idMateria` int(11) NOT NULL,
+   `idEstado` int(11) NOT NULL,
+    FOREIGN KEY (idMateria) REFERENCES materia (idMateria),
+    FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
+)
+
+
+CREATE TABLE `periodo` (
+  `idPeriodo` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombrePeriodo` varchar(30) NOT NULL,
+  `descripcionPeriodo` varchar(150) NOT NULL,
+  `estadoPeriodo` varchar(10) NOT NULL,
+  `idCurso` int(11) NOT NULL,
+  `idEstado` int(11) NOT NULL,
+    FOREIGN KEY (idCurso) REFERENCES curso (idCurso),
+    FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
+)
+
+
+

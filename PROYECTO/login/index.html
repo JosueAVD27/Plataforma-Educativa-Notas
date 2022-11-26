@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FAVICON-->
+    <link rel="icon" type="image/png" href="../assets/imagenes/FavIcon.png"/>
+
+    <!--ESTILOS-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="controladores/agregarUsuario.php" method="POST">
+                <h1 class="texto">Regístrate</h1>
+                <div class="contenedor_registro_general">
+                    <div>
+                        <div class="input_registro1">
+                            <input class="input input_izquierda" type="text" name="username" placeholder="Usuario" required />
+                            <input class="input input_derecha" type="password" name="contrasenia_usuaio" placeholder="Contraseña" required />
+                        </div>
+                        <div class="input_registro2">
+                            <input class="input input_izquierda" type="text" name="nombre_usuario" placeholder="Nombre" required />
+                            <input class="input input_derecha" type="text" name="apellido_usuario" placeholder="Apellido" required />
+                        </div>
+                        <div class="input_registro3">
+                            <input class="input input_izquierda" type="text" name="cedula_usuario" placeholder="Cédula" required />
+                            <input class="input input_derecha" type="text" name="telefono_usuario" placeholder="Teléfono" required />
+                        </div>
+                    </div>
+                    <input class="input" type="email" name="correo_usuario" placeholder="Correo Electrónico" required />
+                </div>
+                
+                <input class="btn" type="submit" value="Registrarse" />
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="controladores/accesoUsuarios.php" method="POST">
+                <h1 class="texto">Inicia Sesión</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social"><i class="fa fa-envelope"></i></a>
+                </div>
+                <input class="input" type="email" name="login_correo" placeholder="Correo Electrónico" required />
+                <input class="input" type="password" name="login_contrasenia" placeholder="Contraseña" required />
+                <a href="#" class="enlace">¿Olvidaste la contraseña?</a>
+                <input class="btn" type="submit" value="Ingresar" />
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>¡Bienvenido de nuevo!</h1>
+                    <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+                    <button class="btn2 ghost" id="signIn">Iniciar Sesión</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hola, Amigo!</h1>
+                    <p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
+                    <button class="btn2 ghost" id="signUp">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../assets/js/login.js"></script>
