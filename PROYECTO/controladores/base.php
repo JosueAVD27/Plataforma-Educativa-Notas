@@ -31,11 +31,11 @@
             </a>
         </li>
         <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left" href="">
+            <a class="navbar-item-inner flexbox-left" href="../templates/notas.php">
                 <div class="navbar-item-inner-icon-wrapper flexbox">
                     <ion-icon name="folder-open-outline"></ion-icon>
                 </div>
-                <span class="link-text">Projects</span>
+                <span class="link-text">Notas</span>
             </a>
         </li>
         <li class="navbar-item flexbox-left">
