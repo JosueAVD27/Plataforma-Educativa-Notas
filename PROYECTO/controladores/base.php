@@ -5,7 +5,7 @@
         </li>
         <li class="lista_item item_navbar">
             <?php echo '<a class="btn_usuario navbar-item" href="../login/usuario.php?id=' . $_SESSION['id'] . '">' ?>
-            <ion-icon name="person-circle-outline"></ion-icon> <?php echo $_SESSION['nombreUsuario'] ?>
+            <?php echo '<img class="fotoUsuario_base" src="data:image/png;base64,'.base64_encode($_SESSION['fotoU']).'"/>' . $_SESSION['nombreUsuario'] ?>
             </a>
         </li>
         <li class="lista_item item_navbar">

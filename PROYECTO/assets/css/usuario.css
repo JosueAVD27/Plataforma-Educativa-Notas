@@ -1,0 +1,82 @@
+.icono_usuario{
+    font-size: 50px;
+    padding-right: 10px;
+}
+
+.text_usuario{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.contenedor_interno{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor_interno_left{
+    width: 40%;
+}
+
+.contenedor_interno_right{
+    width: 60%;
+    padding-top: 20px;
+}
+
+.contenedor_foto>div{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.foto_perfil{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.nombre_perfil>p{
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.contenedor_datos1{
+    display: flex;
+    width: 100%;
+}
+
+.contenedor_datos1>div{
+    width: 50%;
+    padding-top: 30px;
+}
+
+.contenedor_datos1>div>div>p, .datos_letras{
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.contenedor_botones{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+
+
+.contenedor_datos2>a{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn_actualizar{
+    border: 1px solid green;
+    color: green !important;
+}
+
+.btn_actualizar:hover{
+    background-color: green;
+    color: white !important;
+}

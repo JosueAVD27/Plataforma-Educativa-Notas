@@ -19,7 +19,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="controladores/agregarUsuario.php" method="POST">
+            <form action="controladores/agregarUsuario.php" method="POST" enctype="multipart/form-data">
                 <h1 class="texto">Regístrate</h1>
                 <div class="contenedor_registro_general">
                     <div>
@@ -38,7 +38,8 @@
                     </div>
                     <input class="input" type="email" name="correo_usuario" placeholder="Correo Electrónico" required />
                 </div>
-                
+                <input type="file" accept="image/jpeg, image/png" name="image" hidden>
+
                 <input class="btn" type="submit" value="Registrarse" />
             </form>
         </div>

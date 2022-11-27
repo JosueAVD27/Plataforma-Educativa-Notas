@@ -12,8 +12,14 @@
     $cedulaUsuario=$_POST['cedula_usuario'];
     $telefonoUsuario=$_POST['telefono_usuario'];
     $correoUsuario=$_POST['correo_usuario'];
-    $fotoUsuario="Foto";
+
+    //Agregar imagen por defecto
+    $image = "../../assets/imagenes/usuario.jpg";
+    $fotoUsuario = addslashes(file_get_contents($image));
+
+    //Agregar tipo de usuario Estudiante
     $tipoUsuario=1;
+    //Agregar estado de usuario Activo
     $estadoUsuario=1;
 
     $consulta="INSERT INTO usuarios(username,nombreUsuario,apellidoUsuario, claveUsuario, cedulaUsuario, telefonoUsuario, correoUsuario, fotoUsuario, idTipo, idEstado)

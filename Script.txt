@@ -68,4 +68,11 @@ CREATE TABLE `periodo` (
 )
 
 
+INSERT INTO `tipousuario` (`idTipo`, `tipo`) VALUES (NULL, 'Estudiante');
+INSERT INTO `tipousuario` (`idTipo`, `tipo`) VALUES (NULL, 'Docente');
+INSERT INTO `tipousuario` (`idTipo`, `tipo`) VALUES (NULL, 'Administrador');
+
+INSERT INTO `estados` (`idEstado`, `estado`) VALUES (NULL, 'Activo');
+INSERT INTO `estados` (`idEstado`, `estado`) VALUES (NULL, 'Inactivo');
+
 
