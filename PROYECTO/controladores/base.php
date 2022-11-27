@@ -23,23 +23,15 @@
             <span class="link-text letras_logo">Desarrollo Web</span>
         </li>
         <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
-                <div class="navbar-item-inner-icon-wrapper flexbox">
-                    <ion-icon name="search-outline"></ion-icon>
-                </div>
-                <span class="link-text">Search</span>
-            </a>
-        </li>
-        <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
+            <a class="navbar-item-inner flexbox-left" href="../templates/inicio.php">
                 <div class="navbar-item-inner-icon-wrapper flexbox">
                     <ion-icon name="home-outline"></ion-icon>
                 </div>
-                <span class="link-text">Home</span>
+                <span class="link-text">Inicio</span>
             </a>
         </li>
         <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
+            <a class="navbar-item-inner flexbox-left" href="">
                 <div class="navbar-item-inner-icon-wrapper flexbox">
                     <ion-icon name="folder-open-outline"></ion-icon>
                 </div>

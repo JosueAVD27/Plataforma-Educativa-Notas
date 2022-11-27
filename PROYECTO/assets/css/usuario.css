@@ -96,7 +96,7 @@
 
 .fotoUsuario:hover {
     filter: grayscale(90%);
-    transition: all .5s;
+    transition: .5s ease-in-out all;
 }
 
 .image-upload>input {
