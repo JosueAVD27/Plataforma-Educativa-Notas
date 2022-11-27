@@ -1,5 +1,5 @@
 <?php
-    include("../controladores/main.php");
+include("../controladores/main.php");
 ?>
 
 
@@ -25,15 +25,18 @@
 <body>
     <!-- Cabecera -->
     <?php
-        include("../controladores/base.php");
+    include("../controladores/base.php");
     ?>
 
     <!-- Contenido -->
     <section id="contenedor">
         <div>
-            <h1>Inicio</h1>
+            <h3>Inicio</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur natus odio excepturi exercitationem provident, molestiae dolore, doloribus nihil, corrupti sint doloremque. Modi ipsum consectetur porro, odio voluptate ducimus assumenda animi?</p>
             <p><?php echo $_SESSION['nombreUsuario'] ?></p>
+
+
+            
         </div>
     </section>
 

@@ -1,0 +1,6 @@
+SELECT * FROM usuarios 
+INNER JOIN tipousuario ON usuarios.idTipo = tipousuario.idTipo
+INNER JOIN estados ON usuarios.idEstado = estados.idEstado
+WHERE usuarios.idUsuario = 3
+
+
