@@ -45,28 +45,6 @@ CREATE TABLE `materia` (
     FOREIGN KEY (idNotas) REFERENCES notas (idNotas) 
 )
 
-CREATE TABLE `curso` (
-  `idCurso` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nombreCurso` varchar(30) NOT NULL,
-  `descripcionCurso` varchar(150) NOT NULL,
-  `idMateria` int(11) NOT NULL,
-   `idEstado` int(11) NOT NULL,
-    FOREIGN KEY (idMateria) REFERENCES materia (idMateria),
-    FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
-)
-
-
-CREATE TABLE `periodo` (
-  `idPeriodo` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nombrePeriodo` varchar(30) NOT NULL,
-  `descripcionPeriodo` varchar(150) NOT NULL,
-  `estadoPeriodo` varchar(10) NOT NULL,
-  `idCurso` int(11) NOT NULL,
-  `idEstado` int(11) NOT NULL,
-    FOREIGN KEY (idCurso) REFERENCES curso (idCurso),
-    FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
-)
-
 
 INSERT INTO `tipousuario` (`idTipo`, `tipo`) VALUES (NULL, 'Estudiante');
 INSERT INTO `tipousuario` (`idTipo`, `tipo`) VALUES (NULL, 'Docente');
