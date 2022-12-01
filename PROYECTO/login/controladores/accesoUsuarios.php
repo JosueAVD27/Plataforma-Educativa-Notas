@@ -28,6 +28,7 @@
             //Definir las variables de session y redirige a una pagina de usuario
             $_SESSION["id"] = $fila['idUsuario'];
             $_SESSION["nombreUsuario"] = $fila['username'];
+            $_SESSION["permisos"] = $fila['idTipo'];
             $_SESSION["fotoU"] = $fila['fotoUsuario'];
 
             header("location: ../../templates/inicio.php");

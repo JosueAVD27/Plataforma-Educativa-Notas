@@ -1,0 +1,45 @@
+.sub_contenedor{
+    padding-top: 15px;
+    width: 100%;
+}
+
+.contenedor_form{
+    display: grid;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.contenedor_interior{
+    display: grid;
+    width: 50%;
+}
+
+.contenedor_interior_left{
+    display: grid;
+}
+
+.contenedor_interior_right{
+    display: grid;
+}
+
+.contenedor_botones{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.contenedor_botones>button{
+    margin-right: 5px;
+}
+
+.contenedor_botones>a{
+    margin-left: 5px;
+}
+
+form{
+    display: grid;
+    width: 100%;
+    justify-items: center;
+}
+

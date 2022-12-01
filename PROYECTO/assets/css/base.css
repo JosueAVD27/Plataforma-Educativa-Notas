@@ -123,7 +123,7 @@ a:visited {
 }
 
 /*label*/
-label{
+label {
     font-weight: bold;
     padding-bottom: 5px;
 }
@@ -411,17 +411,17 @@ ol {
 
 @media only screen and (max-width: 496px) {}
 
-.dimencion_Logo{
+.dimencion_Logo {
     width: 80px;
 }
 
-.letras_logo{
+.letras_logo {
     display: grid;
     color: aliceblue;
     font-weight: bold;
     font-size: 20px;
     cursor: default;
-}   
+}
 
 /* Navbar Top */
 .nav_cabezera {
@@ -435,7 +435,7 @@ ol {
     z-index: 100 !important;
 }
 
-.contenedor_nav{
+.contenedor_nav {
     display: flex;
     width: 100%;
     justify-content: right;
@@ -444,18 +444,18 @@ ol {
 
 }
 
-.lista_item{
+.lista_item {
     list-style: none;
 }
 
-.lista_item_titulo{
+.lista_item_titulo {
     width: 100%;
     padding-left: 100px;
 }
 
 
 /*FOOTER*/
-.contenedor_footer{
+.contenedor_footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -463,52 +463,52 @@ ol {
     color: hsl(var(--white));
     width: 100%;
     height: 70px;
-        position: absolute;
+    position: absolute;
     bottom: 0;
     left: 0;
     padding-left: 50px;
 }
 
-.organizacion_footer{
+.organizacion_footer {
     display: grid;
     width: 50%;
     justify-content: left;
     padding-left: 5%;
 }
 
-.organizacion_footer>a{
+.organizacion_footer>a {
     width: 100%;
     font-size: 15px;
     text-decoration: none;
     color: hsl(var(--white));
 }
 
-.organizacion_footer>a:hover{
+.organizacion_footer>a:hover {
     color: hsl(var(--quite-gray));
 }
 
-.derechos_footer{
+.derechos_footer {
     display: grid;
     width: 50%;
     justify-content: right;
     padding-right: 5%;
 }
 
-.derechos_footer>p{
+.derechos_footer>p {
     width: 100%;
     font-size: 15px;
 }
 
-.item_navbar>a{
+.item_navbar>a {
     padding: 10px 20px;
     border-radius: 5px;
 }
 
-.item_navbar>a:hover{
+.item_navbar>a:hover {
     background: hsl(var(--background-secondary-light));
 }
 
-.btn_cerrar{
+.btn_cerrar {
     display: flex;
     text-decoration: none;
     color: brown !important;
@@ -518,16 +518,16 @@ ol {
     align-items: center;
 }
 
-.btn_cerrar:hover{
+.btn_cerrar:hover {
     color: red !important;
 }
 
-.btn_cerrar>ion-icon{
+.btn_cerrar>ion-icon {
     font-size: 30px;
     padding-left: 5px;
 }
 
-.btn_usuario{
+.btn_usuario {
     display: flex;
     text-decoration: none;
     color: darkgreen !important;
@@ -537,11 +537,11 @@ ol {
     align-items: center;
 }
 
-.btn_usuario:hover{
+.btn_usuario:hover {
     color: green !important;
 }
 
-.btn_usuario>ion-icon{
+.btn_usuario>ion-icon {
     font-size: 30px;
     padding-right: 5px;
 }
@@ -550,7 +550,7 @@ ol {
     Main
    ====== */
 
-   #main {
+#main {
     margin: 0 0 0 2em;
     min-height: 150vh;
 }
@@ -565,17 +565,17 @@ ol {
     max-width: 80%;
 }
 
-#contenedor{
+#contenedor {
     padding-top: 120px;
     padding-left: 100px;
     margin: 0 3em;
 }
 
-#contenedor>div{
+#contenedor>div {
     min-height: 100vh;
 }
 
-.fotoUsuario_base{
+.fotoUsuario_base {
     display: flex;
     justify-items: center;
     align-items: center;
@@ -588,7 +588,7 @@ ol {
 /*Inputs*/
 /*Input Text*/
 
-.input-text{
+.input-text {
     border: 1px solid #DBE1EB;
     font-size: 18px;
     font-family: Arial, Verdana;
@@ -607,4 +607,85 @@ ol {
     background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
     color: #2E3133;
     margin-bottom: 10px;
+}
+
+.btn_format {
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    color: #000;
+}
+
+
+.btn_agregar {
+    color: green;
+    background-color: transparent;
+    border: 1px solid green;
+}
+
+.btn_agregar:hover {
+    background-color: green;
+    color: white;
+}
+
+.btn_cancelar {
+    color: rgb(255, 0, 0) !important;
+    background-color: transparent;
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.btn_cancelar:hover {
+    background-color: rgb(255, 0, 0);
+    color: white !important;
+}
+
+.btn_editar {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid rgb(103, 200, 168);
+    text-decoration: none;
+    padding: 5px;
+    color: rgb(103, 200, 168) !important;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.btn_editar:hover {
+    background-color: rgb(103, 200, 168);
+    color: black !important;
+}
+
+.btn_eliminar {
+    border: 1px solid red;
+    text-decoration: none;
+    padding: 5px;
+    color: red;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn_eliminar:hover {
+    background-color: red;
+    color: rgb(255, 255, 255);
+}
+
+.btn_enviar {
+    color: rgb(0, 30, 255);
+    background-color: transparent;
+    border: 1px solid rgb(0, 30, 255);
+    cursor: pointer;
+    padding: 11px 17px;
+}
+
+.btn_enviar:hover {
+    background-color: rgb(0, 30, 255);
+    color: white;
+}
+
+.text_usuario {
+    padding-bottom: 25px;
 }

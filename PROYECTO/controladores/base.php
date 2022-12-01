@@ -30,45 +30,103 @@
                 <span class="link-text">Inicio</span>
             </a>
         </li>
-        <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left" href="../templates/notas.php">
-                <div class="navbar-item-inner-icon-wrapper flexbox">
-                    <ion-icon name="folder-open-outline"></ion-icon>
-                </div>
-                <span class="link-text">Notas</span>
-            </a>
-        </li>
-        <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
-                <div class="navbar-item-inner-icon-wrapper flexbox">
-                    <ion-icon name="pie-chart-outline"></ion-icon>
-                </div>
-                <span class="link-text">Dashboard</span>
-            </a>
-        </li>
-        <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
-                <div class="navbar-item-inner-icon-wrapper flexbox">
-                    <ion-icon name="people-outline"></ion-icon>
-                </div>
-                <span class="link-text">Team</span>
-            </a>
-        </li>
-        <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
-                <div class="navbar-item-inner-icon-wrapper flexbox">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                </div>
-                <span class="link-text">Support</span>
-            </a>
-        </li>
-        <li class="navbar-item flexbox-left">
-            <a class="navbar-item-inner flexbox-left">
-                <div class="navbar-item-inner-icon-wrapper flexbox">
-                    <ion-icon name="settings-outline"></ion-icon>
-                </div>
-                <span class="link-text">Settings</span>
-            </a>
-        </li>
+        <?php
+            if($_SESSION["permisos"] == 1){
+        ?>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="../templates/notas.php">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+                    <span class="link-text">Notas</span>
+                </a>
+            </li>
+        <?php
+            }
+        ?>
+
+        <?php
+            if($_SESSION["permisos"] == 2){
+        ?>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                    <span class="link-text">Estudiantes</span>
+                </a>
+            </li>
+        <?php
+            }
+        ?>
+        <?php
+            if($_SESSION["permisos"] == 2){
+        ?>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="newspaper-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Registros</span>
+                    </a>
+                </li>
+        <?php
+            }
+        ?>
+
+
+        <?php
+            if($_SESSION["permisos"] == 3){
+        ?>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left" href="../templates/usuarios.php">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="person-add-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Usuarios</span>
+                    </a>
+                </li>
+        <?php
+            }
+        ?>
+        <?php
+            if($_SESSION["permisos"] == 3){
+        ?>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left" href="../templates/materias.php">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Materias</span>
+                    </a>
+                </li>
+        <?php
+            }
+        ?>
+        <?php
+            if($_SESSION["permisos"] == 3){
+        ?>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left" href="../templates/configuraciones.php">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Configuraciones</span>
+                    </a>
+                </li>
+        <?php
+            }else{
+        ?>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left" href="#">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Configuraciones</span>
+                    </a>
+                </li>
+        <?php
+            }
+        ?>
     </ul>
 </nav>
