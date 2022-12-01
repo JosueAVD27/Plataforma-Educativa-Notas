@@ -24,25 +24,25 @@ CREATE TABLE `usuarios` (
     FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
 )
 
-CREATE TABLE `notas` (
-  `idNotas` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `idUsuario` int(11) NOT NULL,
-  `nota1` double NOT NULL,
-  `nota2` double NOT NULL,
-  `nota3` double NOT NULL,
-    FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario)
-)
-
 CREATE TABLE `materia` (
   `idMateria` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nrc` int(4) NOT NULL,
   `nombreMateria` varchar(30) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `idEstado` int(11) NOT NULL,
-   `idNotas` int(11) NOT NULL,
     FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario),
-    FOREIGN KEY (idEstado) REFERENCES estados (idEstado),
-    FOREIGN KEY (idNotas) REFERENCES notas (idNotas) 
+    FOREIGN KEY (idEstado) REFERENCES estados (idEstado)
+)
+
+CREATE TABLE `notas` (
+  `idNotas` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idUsuario` int(11) NOT NULL,
+  `idMateria` int(11) NOT NULL,
+  `nota1` double NOT NULL,
+  `nota2` double NOT NULL,
+  `nota3` double NOT NULL,
+    FOREIGN KEY (idUsuario) REFERENCES usuarios (idUsuario),
+    FOREIGN KEY (idMateria) REFERENCES materia (idMateria)
 )
 
 
@@ -53,4 +53,20 @@ INSERT INTO `tipousuario` (`idTipo`, `tipo`) VALUES (NULL, 'Administrador');
 INSERT INTO `estados` (`idEstado`, `estado`) VALUES (NULL, 'Activo');
 INSERT INTO `estados` (`idEstado`, `estado`) VALUES (NULL, 'Inactivo');
 
+INSERT INTO `usuarios` (`idUsuario`, `username`, `nombreUsuario`, `apellidoUsuario`, `claveUsuario`, `cedulaUsuario`, `telefonoUsuario`, `correoUsuario`, `idTipo`, `idEstado`) 
+VALUES (NULL, 'JosueAVD27', 'Josue', 'Velasquez', '12345', '2350793218', '0980167849', 'ajvelasquez4@espe.edu.ec', 3, 1);
+INSERT INTO `usuarios` (`idUsuario`, `username`, `nombreUsuario`, `apellidoUsuario`, `claveUsuario`, `cedulaUsuario`, `telefonoUsuario`, `correoUsuario`, `idTipo`, `idEstado`) 
+VALUES (NULL, 'Breag306', 'Daniela', 'Gonzalez', '12345', '2350162182', '0992617248', 'dbgonzalez1@espe.edu.ec', 1, 1);
+INSERT INTO `usuarios` (`idUsuario`, `username`, `nombreUsuario`, `apellidoUsuario`, `claveUsuario`, `cedulaUsuario`, `telefonoUsuario`, `correoUsuario`, `idTipo`, `idEstado`) 
+VALUES (NULL, 'Miguel123', 'Miguel', 'Ajila', '12345', '1315552925', '0980422297', 'maajila1@espe.edu.ec', 2, 1);
+INSERT INTO `usuarios` (`idUsuario`, `username`, `nombreUsuario`, `apellidoUsuario`, `claveUsuario`, `cedulaUsuario`, `telefonoUsuario`, `correoUsuario`, `idTipo`, `idEstado`) 
+VALUES (NULL, 'Selena123', 'Selena', 'Enriquez', '12345', '2300084371', '0969691037', 'sienriquez1@espe.edu.ec', 1, 1);
+
+INSERT INTO `materia` (`idMateria`, `nrc`, `nombreMateria`, `idUsuario`, `idEstado`) VALUES (NULL, '6666', 'Matemáticas', 3, 1);
+INSERT INTO `materia` (`idMateria`, `nrc`, `nombreMateria`, `idUsuario`, `idEstado`) VALUES (NULL, '6669', 'Programación', 1, 1);
+
+INSERT INTO `notas` (`idNotas`, `idUsuario`, `idMateria`, `nota1`, `nota2`, `nota3`) VALUES (NULL, 2, 1, 8, 9, 10);
+INSERT INTO `notas` (`idNotas`, `idUsuario`, `idMateria`, `nota1`, `nota2`, `nota3`) VALUES (NULL, 4, 1, 7, 9.5, 8);
+INSERT INTO `notas` (`idNotas`, `idUsuario`, `idMateria`, `nota1`, `nota2`, `nota3`) VALUES (NULL, 2, 2, 7, 7.5, 8);
+INSERT INTO `notas` (`idNotas`, `idUsuario`, `idMateria`, `nota1`, `nota2`, `nota3`) VALUES (NULL, 4, 2, 8, 9, 10);
 
