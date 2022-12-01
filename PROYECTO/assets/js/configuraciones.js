@@ -16,6 +16,11 @@ function ConfirmDeleteEstado(){
     }
 }
 
+function ConfirmDeleteEstadoNegado(event){
+    event.preventDefault()
+    window.alert("No puedes eliminar este campo");
+}
+
 function ConfirmPermiso(){
     var respuesta = confirm("Estas seguro que deseas actualizar este permiso?");
     if(respuesta == true){
@@ -44,3 +49,12 @@ function ConfirmDeleteMateria(){
     }
 }
 
+function ConfirmMateria(){
+    var respuesta = confirm("Estas seguro que deseas actualizar esta materia?");
+    if(respuesta == true){
+        return true;
+        
+    }else{
+        return false;
+    }
+}

@@ -618,14 +618,14 @@ ol {
 
 
 .btn_agregar {
-    color: green;
+    color: green !important;
     background-color: transparent;
     border: 1px solid green;
 }
 
 .btn_agregar:hover {
     background-color: green;
-    color: white;
+    color: white !important;
 }
 
 .btn_cancelar {
@@ -688,4 +688,8 @@ ol {
 
 .text_usuario {
     padding-bottom: 25px;
+}
+
+.contenedor_btn_agregar{
+    margin-top: 50px;
 }

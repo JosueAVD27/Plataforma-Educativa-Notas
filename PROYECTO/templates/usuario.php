@@ -1,7 +1,7 @@
 <?php
 include("../controladores/main.php");
 include("../controladores/admin.php");
-include("controladorAdmin/editarMateria.php");
+include("controladorAdmin/editarUsuario.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ include("controladorAdmin/editarMateria.php");
     <link rel="stylesheet" type="text/css" href="../assets/css/permisos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Materia</title>
+    <title>Estados</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@ include("controladorAdmin/editarMateria.php");
     <!-- Contenido -->
     <section id="contenedor">
 
-        <h3 class="text_usuario">Materia</h3>
+        <h3 class="text_usuario">Estados</h3>
 
         <div class="contenedor">
             <div class="sub_contenedor">

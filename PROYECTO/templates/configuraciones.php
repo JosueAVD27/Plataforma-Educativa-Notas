@@ -56,7 +56,12 @@ include("../controladores/admin.php");
                                 echo '<td>' . $row['idTipo'] . '</td>';
                                 echo '<td>' . $row['tipo'] . '</td>';
                                 echo '<td>' . '<a href="permisos.php?id=' . $row['idTipo'] . '"class="btn_editar"> Editar </a>' . '</td>';
-                                echo '<td>' . '<a href="controladorAdmin/eliminarPermiso.php?id=' . $row['idTipo'] . '"><button type="button" class="btn_eliminar" onclick="return ConfirmDeleteTipo()">Eliminar</button> </a>' . '</td>';
+                                if($row['idTipo'] == 1 || $row['idTipo'] == 2 || $row['idTipo'] == 3){
+                                    $variable = "onclick='return ConfirmDeleteEstadoNegado(event)'";
+                                }else{
+                                    $variable = "onclick='return ConfirmDeleteTipo()'";
+                                }
+                                echo '<td>' . '<a href="controladorAdmin/eliminarPermiso.php?id=' . $row['idTipo'] . '"><button type="button" class="btn_eliminar" '. $variable .'>Eliminar</button> </a>' . '</td>';
                                 echo '</tr>';
                             }
                             $resultado->free();
@@ -66,11 +71,14 @@ include("../controladores/admin.php");
                         ?>
                     </tbody>
                 </table>
+                <div align="center" class="contenedor_btn_agregar">
+                    <a class="btn_format btn_agregar" href="insertarPermiso.php">Agregar permiso</a>
+                </div>
             </div>
 
             <div class="contenedor2">
                 <table>
-                    <h6 class="subtitulo" align="center">Estados</h6>
+                    <h6 class="subtitulo" align="center">Estados definidos</h6>
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -88,7 +96,12 @@ include("../controladores/admin.php");
                                 echo '<td>' . $row2['idEstado'] . '</td>';
                                 echo '<td>' . $row2['estado'] . '</td>';
                                 echo '<td>' . '<a href="estados.php?id=' . $row2['idEstado'] . '"class="btn_editar"> Editar </a>' . '</td>';
-                                echo '<td>' . '<a href="controladorAdmin/eliminarEstado.php?id=' . $row2['idEstado'] . '"><button type="button" class="btn_eliminar" onclick="return ConfirmDeleteEstado()">Eliminar</button> </a>' . '</td>';
+                                if($row2['idEstado'] == 1 || $row2['idEstado'] == 2){
+                                    $variable2 = "onclick='return ConfirmDeleteEstadoNegado(event)'";
+                                }else{
+                                    $variable2 = "onclick='return ConfirmDeleteEstado()'";
+                                }
+                                echo '<td>' . '<a href="controladorAdmin/eliminarEstado.php?id=' . $row2['idEstado'] . '"><button type="button" class="btn_eliminar" '. $variable2 .'>Eliminar</button> </a>' . '</td>';
                                 echo '</tr>';
                             }
                             $resultado2->free();
@@ -98,6 +111,9 @@ include("../controladores/admin.php");
                         ?>
                     </tbody>
                 </table>
+                <div align="center" class="contenedor_btn_agregar">
+                    <a class="btn_format btn_agregar" href="insertarEstado.php">Agregar estado</a>
+                </div>
             </div>
         </div>
 

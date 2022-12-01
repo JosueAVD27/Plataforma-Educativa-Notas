@@ -1,15 +1,7 @@
 <?php
 include("../controladores/main.php");
+include("../controladores/admin.php");
 
-if($_SESSION['permisos'] != 3){
-    header("location: inicio.php");
-}else{
-
-
-
-
-    
-}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +19,9 @@ if($_SESSION['permisos'] != 3){
     <link rel="icon" type="image/png" href="../assets/imagenes/FavIcon.png">
     <!--ESTILOS-->
     <link rel="stylesheet" type="text/css" href="../assets/css/base.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../assets/css/configuraciones.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Usuarios</title>
 </head>
 
@@ -43,8 +37,50 @@ if($_SESSION['permisos'] != 3){
 
         <h3 class="text_usuario">Usuarios</h3>
         <div>
+            <div>
+                <table>
+                    <h6 class="subtitulo" align="center">Todos los usuarios</h6>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">USUARIO</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">CEDULA</th>
+                            <th scope="col">TELEFONO</th>
+                            <th scope="col">CORREO</th>
+                            <th scope="col">TIPO</th>
+                            <th scope="col">ESTADO</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        //Control sobre la consulta
+                        if ($resultado4->num_rows > 0) {
+                            while ($row4 = $resultado4->fetch_assoc()) {
+                                echo '<tr>';
+                                echo '<td>' . $row4['idUsuario'] . '</td>';
+                                echo '<td>' . $row4['username'] . '</td>';
+                                echo '<td>' . $row4['nombreUsuario'] . ' ' . $row4['apellidoUsuario'] . '</td>';
+                                echo '<td>' . $row4['cedulaUsuario'] . '</td>';
+                                echo '<td>' . $row4['telefonoUsuario'] . '</td>';
+                                echo '<td>' . $row4['correoUsuario'] . '</td>';
+                                echo '<td>' . $row4['tipo'] . '</td>';
+                                echo '<td>' . $row4['estado'] . '</td>';
 
-
+                                echo '<td>' . '<a href="usuario.php?id=' . $row4['idUsuario'] . '"class="btn_editar"> Editar </a>' . '</td>';
+                                echo '<td>' . '<a href="controladorAdmin/eliminarUsuario.php?id=' . $row4['idUsuario'] . '"><button type="button" class="btn_eliminar" id="btn_desactivar_materia" onclick="return ConfirmDeleteMateria()">Cambiar Estado</button> </a>' . '</td>';
+                                echo '</tr>';
+                            }
+                            $resultado4->free();
+                        } else {
+                            echo '<p><em> No existen datos registrados</em></p>';
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 

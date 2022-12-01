@@ -72,6 +72,9 @@ include("../controladores/admin.php");
                         ?>
                     </tbody>
                 </table>
+                <div align="center" class="contenedor_btn_agregar">
+                    <a class="btn_format btn_agregar" href="insertarMateria.php">Agregar materia</a>
+                </div>
             </div>
         </div>
     </section>
