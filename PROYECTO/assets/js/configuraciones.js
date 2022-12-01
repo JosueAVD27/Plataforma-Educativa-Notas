@@ -33,3 +33,14 @@ function ConfirmEstado(){
         return false;
     }
 }
+
+function ConfirmDeleteMateria(){
+    var respuesta = confirm("Estas seguro que deseas cambiar el estado de esta materia?");
+    if(respuesta == true){
+        return true;
+        
+    }else{
+        return false;
+    }
+}
+
