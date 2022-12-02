@@ -37,7 +37,20 @@ include("controladorAdmin/agregarEstados.php");
         <h3 class="text_usuario">Agregar nuevo estado</h3>
         <div class="contenedor">
 
-
+        <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
+                   <div class="contenedor_form">
+                        <div class="contenedor_interior">
+                            <div class="contenedor_interior_right">
+                                <label for="">ESTADO:</label>
+                                <input class="input-text" type="text" type="text" name="estado" placeholder="Ingrese el nuevo estado" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor_botones">
+                        <button type="submit" class="btn_format btn_enviar contenedor_interior_left" onclick="return ConfirmEst()">Guardar</button>
+                        <a class="btn_format btn_cancelar contenedor_interior_right" href="configuraciones.php">Cancelar</a>
+                    </div>
+                </form>
 
         </div>
     </section>
