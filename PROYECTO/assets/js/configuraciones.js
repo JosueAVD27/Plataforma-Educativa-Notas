@@ -7,6 +7,15 @@ function ConfirmDeleteTipo(){
     }
 }
 
+function ConfirmAggMateria(){
+    var respuesta = confirm("Estas seguro que deseas agregar la materia?");
+    if(respuesta == true){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function ConfirmDeleteEstado(){
     var respuesta = confirm("Estas seguro que deseas eliminar este estado?");
     if(respuesta == true){
@@ -59,8 +68,18 @@ function ConfirmMateria(){
     }
 }
 
-function ConfirmUsuario(){
-    var respuesta = confirm("Estas seguro que deseas actualizar este usuario?");
+function ConfirmPerm(){
+    var respuesta = confirm("Estas seguro que deseas ingresar un nuevo permiso?");
+    if(respuesta == true){
+        return true;
+        
+    }else{
+        return false;
+    }
+}
+
+function ConfirmEst(){
+    var respuesta = confirm("Estas seguro que deseas ingresar un nuevo estado?");
     if(respuesta == true){
         return true;
         
