@@ -1,0 +1,16 @@
+.contenedor_interior>div{
+    padding: 15px 0;
+    width: 400px;
+}
+
+.contenedor_interior>div>div{
+    display: flex;
+}
+
+.contenedor_interior>div>span{
+    padding-left: 40px;
+}
+
+.letra_X{
+    font-size: 30px;
+}

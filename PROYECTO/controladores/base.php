@@ -30,36 +30,6 @@
                 <span class="link-text">Inicio</span>
             </a>
         </li>
-        <?php
-            if($_SESSION["permisos"] == 1){
-        ?>
-            <li class="navbar-item flexbox-left">
-                <a class="navbar-item-inner flexbox-left" href="../templates/notas.php">
-                    <div class="navbar-item-inner-icon-wrapper flexbox">
-                        <ion-icon name="document-text-outline"></ion-icon>
-                    </div>
-                    <span class="link-text">Notas</span>
-                </a>
-            </li>
-        <?php
-            }
-        ?>
-
-        <?php
-            if($_SESSION["permisos"] == 2){
-        ?>
-            <li class="navbar-item flexbox-left">
-                <a class="navbar-item-inner flexbox-left" href="">
-                    <div class="navbar-item-inner-icon-wrapper flexbox">
-                        <ion-icon name="people-outline"></ion-icon>
-                    </div>
-                    <span class="link-text">Estudiantes</span>
-                </a>
-            </li>
-        <?php
-            }
-        ?>
-
 
         <?php
             if($_SESSION["permisos"] == 3){
@@ -75,6 +45,22 @@
         <?php
             }
         ?>
+
+        <?php
+            if($_SESSION["permisos"] == 3){
+        ?>
+                <li class="navbar-item flexbox-left">
+                    <a class="navbar-item-inner flexbox-left" href="registros.php">
+                        <div class="navbar-item-inner-icon-wrapper flexbox">
+                            <ion-icon name="newspaper-outline"></ion-icon>
+                        </div>
+                        <span class="link-text">Registros</span>
+                    </a>
+                </li>
+        <?php
+            }
+        ?>
+
         <?php
             if($_SESSION["permisos"] == 3){
         ?>

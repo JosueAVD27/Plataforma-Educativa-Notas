@@ -9,3 +9,18 @@ FROM notas AS N
 INNER JOIN materia AS M ON N.idMateria = M.idMateria
 INNER JOIN usuarios AS U ON N.idUsuario = U.idUsuario
 INNER JOIN usuarios AS U2 ON M.idUsuario = U2.idUsuario
+
+
+
+
+SELECT M.*, U.idUsuario AS IdEstudiante, U2.nombreUsuario AS NombreDocente, U2.apellidoUsuario AS ApellidoDocente
+FROM notas AS N
+INNER JOIN materia AS M ON N.idMateria = M.idMateria
+INNER JOIN usuarios AS U ON N.idUsuario = U.idUsuario
+INNER JOIN usuarios AS U2 ON M.idUsuario = U2.idUsuario
+WHERE M.idEstado = 1
+
+
+
+SELECT N.*, U.nombreUsuario, U.apellidoUsuario, U.correoUsuario FROM notas AS N
+INNER JOIN usuarios AS U ON N.idUsuario = U.idUsuario 

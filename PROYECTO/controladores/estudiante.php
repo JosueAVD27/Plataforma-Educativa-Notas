@@ -1,34 +1,52 @@
 <?php
-
-if ($_SESSION['permisos'] == 1) {
-    //Obtener
-    if (isset($_SESSION['id']) && !empty(trim($_SESSION['id']))) {
-        $id = $_SESSION['id'];
-        $consulta = "SELECT M.*, U.idUsuario AS IdEstudiante, U2.nombreUsuario AS NombreDocente, U2.apellidoUsuario AS ApellidoDocente
-        FROM notas AS N
-        INNER JOIN materia AS M ON N.idMateria = M.idMateria
-        INNER JOIN usuarios AS U ON N.idUsuario = U.idUsuario
-        INNER JOIN usuarios AS U2 ON M.idUsuario = U2.idUsuario
-        WHERE U.idUsuario = $id AND M.idEstado = 1";
-
-        $resultado = $conn -> query($consulta);
-
-    } else {
-        echo 'Error! Intente mas tarde';
-        exit();
+    if ($_SESSION['permisos'] != 1) {
+        header("location: inicio.php");
     }
-}else if($_SESSION['permisos'] == 2){
-    //Obtener
-    if (isset($_SESSION['id']) && !empty(trim($_SESSION['id']))) {
-        $id = $_SESSION['id'];
-        $consulta = "SELECT * FROM materia WHERE idUsuario = $id AND idEstado = 1";
 
-        $resultado = $conn -> query($consulta);
+    $id = $_GET['id'];
 
-    } else {
-        echo 'Error! Intente mas tarde';
-        exit();
+    $consultax = "SELECT * FROM materia WHERE idMateria = ?";
+    if ($stmt = $conn->prepare($consultax)) {
+        $stmt->bind_param('i', $_GET['id']);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_array(MYSQLI_ASSOC);
+
+                $materia = $row['nombreMateria'];
+
+            } else {
+                echo 'No exiten resultados';
+                exit();
+            }
+        } else {
+            echo 'No ejecuto la consulta';
+            exit();
+        }
     }
-}else if($_SESSION['permisos'] == 3){
-    
-}
+    $stmt->close();
+
+    $iduser = $_SESSION['id'];
+
+    $consulta = "SELECT * FROM notas WHERE idMateria=? AND idUsuario=$iduser";
+    if ($stmt = $conn->prepare($consulta)) {
+        $stmt->bind_param('i', $_GET['id']);
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            if ($result->num_rows == 1) {
+                $row = $result->fetch_array(MYSQLI_ASSOC);
+
+                $nota1 = $row['nota1'];
+                $nota2 = $row['nota2'];
+                $nota3 = $row['nota3'];
+
+            } else {
+                echo 'No exiten resultados';
+                exit();
+            }
+        } else {
+            echo 'No ejecuto la consulta';
+            exit();
+        }
+    }
+    $stmt->close();

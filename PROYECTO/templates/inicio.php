@@ -1,6 +1,6 @@
 <?php
 include("../controladores/main.php");
-include("../controladores/estudiante.php");
+include("../controladores/control.php");
 ?>
 
 
@@ -41,7 +41,7 @@ include("../controladores/estudiante.php");
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                 ?>
-                            <a class="contenedor_targeta" href="#">
+                            <a class="contenedor_targeta" href="notasEstudiante.php?id=<?php echo $row['idMateria']?>">
                                 <div class="contenedor_titulo">
                                     <h6><?php echo $row['nombreMateria'] ?></h6>
                                 </div>
@@ -60,7 +60,7 @@ include("../controladores/estudiante.php");
                         }
                         $resultado->free();
                     } else {
-                        echo '<p><em> No existen datos registrados</em></p>';
+                        echo '<p><em> No existen cursos registrados</em></p>';
                     }
                 }
                 ?>
@@ -70,7 +70,7 @@ include("../controladores/estudiante.php");
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                 ?>
-                            <a class="contenedor_targeta" href="#">
+                            <a class="contenedor_targeta" href="notasDocente.php?id=<?php echo $row['idMateria']?>">
                                 <div class="contenedor_titulo">
                                     <h6><?php echo $row['nombreMateria'] ?></h6>
                                 </div>

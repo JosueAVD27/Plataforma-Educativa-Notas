@@ -31,6 +31,7 @@
             $_SESSION["permisos"] = $fila['idTipo'];
             $_SESSION["fotoU"] = $fila['fotoUsuario'];
 
+
             header("location: ../../templates/inicio.php");
         }
     }else{
