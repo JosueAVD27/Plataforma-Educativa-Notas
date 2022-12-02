@@ -59,20 +59,6 @@
         <?php
             }
         ?>
-        <?php
-            if($_SESSION["permisos"] == 2){
-        ?>
-                <li class="navbar-item flexbox-left">
-                    <a class="navbar-item-inner flexbox-left">
-                        <div class="navbar-item-inner-icon-wrapper flexbox">
-                            <ion-icon name="newspaper-outline"></ion-icon>
-                        </div>
-                        <span class="link-text">Registros</span>
-                    </a>
-                </li>
-        <?php
-            }
-        ?>
 
 
         <?php

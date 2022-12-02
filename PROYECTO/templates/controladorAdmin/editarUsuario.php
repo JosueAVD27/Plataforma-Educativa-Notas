@@ -31,7 +31,7 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
     }
     $stmt->close();
 } else {
-    header("location: ../configuraciones.php");
+    header("location: ../usuarios.php");
     exit();
 }
 
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             );
             //Ejecutar statement
             if ($stmt->execute()) {
-                header('location: materias.php');
+                header('location: usuarios.php');
                 exit();
             } else {
                 echo "Error! el estatement no ejecuto";

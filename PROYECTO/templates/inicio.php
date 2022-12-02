@@ -1,5 +1,6 @@
 <?php
 include("../controladores/main.php");
+include("../controladores/estudiante.php");
 ?>
 
 
@@ -18,6 +19,7 @@ include("../controladores/main.php");
     <link rel="icon" type="image/png" href="../assets/imagenes/FavIcon.png">
     <!--ESTILOS-->
     <link rel="stylesheet" type="text/css" href="../assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/inicio.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Inicio</title>
 </head>
@@ -30,13 +32,76 @@ include("../controladores/main.php");
 
     <!-- Contenido -->
     <section id="contenedor">
+        <h3 class="text_usuario">Inicio</h3>
         <div>
-            <h3>Inicio</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur natus odio excepturi exercitationem provident, molestiae dolore, doloribus nihil, corrupti sint doloremque. Modi ipsum consectetur porro, odio voluptate ducimus assumenda animi?</p>
-            <p><?php echo $_SESSION['nombreUsuario'] ?></p>
 
+            <div class="interno">
+                <?php
+                if ($_SESSION['permisos'] == 1) {
+                    if ($resultado->num_rows > 0) {
+                        while ($row = $resultado->fetch_assoc()) {
+                ?>
+                            <a class="contenedor_targeta" href="#">
+                                <div class="contenedor_titulo">
+                                    <h6><?php echo $row['nombreMateria'] ?></h6>
+                                </div>
+                                <div class="contenedor_contenido">
+                                    <div>
+                                        <label for="">NRC:</label>
+                                        <p><?php echo $row['nrc'] ?></p>
+                                    </div>
+                                    <div>
+                                        <label for="">DOCENTE:</label>
+                                        <p><?php echo $row['NombreDocente'] . ' ' . $row['ApellidoDocente'] ?></p>
+                                    </div>
+                                </div>
+                            </a>
+                <?php
+                        }
+                        $resultado->free();
+                    } else {
+                        echo '<p><em> No existen datos registrados</em></p>';
+                    }
+                }
+                ?>
 
-            
+                <?php
+                if ($_SESSION['permisos'] == 2) {
+                    if ($resultado->num_rows > 0) {
+                        while ($row = $resultado->fetch_assoc()) {
+                ?>
+                            <a class="contenedor_targeta" href="#">
+                                <div class="contenedor_titulo">
+                                    <h6><?php echo $row['nombreMateria'] ?></h6>
+                                </div>
+                                <div class="contenedor_contenido">
+                                    <div>
+                                        <label for="">NRC:</label>
+                                        <p><?php echo $row['nrc'] ?></p>
+                                    </div>
+                                </div>
+                            </a>
+                <?php
+                        }
+                        $resultado->free();
+                    } else {
+                        echo '<p><em> No existen datos registrados</em></p>';
+                    }
+                }
+                ?>
+
+                <?php
+                if ($_SESSION['permisos'] == 3) {
+
+                ?>
+                    <div>
+                        <h1>Bienvenido!</h1>
+                        <h2>ERES ADMINISTRADOR!</h2>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
         </div>
     </section>
 

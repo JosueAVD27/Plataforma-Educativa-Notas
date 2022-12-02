@@ -70,7 +70,7 @@ include("../controladores/admin.php");
                                 echo '<td>' . $row4['estado'] . '</td>';
 
                                 echo '<td>' . '<a href="usuario.php?id=' . $row4['idUsuario'] . '"class="btn_editar"> Editar </a>' . '</td>';
-                                echo '<td>' . '<a href="controladorAdmin/eliminarUsuario.php?id=' . $row4['idUsuario'] . '"><button type="button" class="btn_eliminar" id="btn_desactivar_materia" onclick="return ConfirmDeleteMateria()">Cambiar Estado</button> </a>' . '</td>';
+                                echo '<td>' . '<a href="controladorAdmin/eliminarUsuario.php?id=' . $row4['idUsuario'] . '"><button type="button" class="btn_eliminar" id="btn_desactivar_materia" onclick="return ConfirmDeleteMateria()">Cambiar</button> </a>' . '</td>';
                                 echo '</tr>';
                             }
                             $resultado4->free();

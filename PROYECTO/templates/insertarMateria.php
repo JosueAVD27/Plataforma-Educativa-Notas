@@ -37,7 +37,6 @@ include("controladorAdmin/agregarMaterias.php");
         <h3 class="text_usuario">Agregar nueva materia</h3>
         <div class="contenedor">
         <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
-                    <h6>Actualizar</h6>
                     <div class="contenedor_form">
                         <div class="contenedor_interior">
                             <div class="contenedor_interior_left">

@@ -4,3 +4,8 @@ INNER JOIN estados ON usuarios.idEstado = estados.idEstado
 WHERE usuarios.idUsuario = 3
 
 
+SELECT N.*, M.*, U.idUsuario AS IdEstudiante, U.nombreUsuario AS NombreEstudiante, U.apellidoUsuario AS ApellidoEstudiante, U2.nombreUsuario AS NombreDocente, U2.apellidoUsuario AS ApellidoDocente
+FROM notas AS N
+INNER JOIN materia AS M ON N.idMateria = M.idMateria
+INNER JOIN usuarios AS U ON N.idUsuario = U.idUsuario
+INNER JOIN usuarios AS U2 ON M.idUsuario = U2.idUsuario
