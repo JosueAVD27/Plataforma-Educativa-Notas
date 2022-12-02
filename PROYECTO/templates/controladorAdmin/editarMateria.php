@@ -31,7 +31,6 @@ if (isset($_GET['id']) && !empty(trim($_GET['id']))) {
 }
 
 //Consulta para obtener todos los docentes
-
 $consultaM2 = "SELECT idUsuario, nombreUsuario, apellidoUsuario FROM usuarios WHERE idTipo = 2 AND idEstado = 1";
 $resultadoM2 = $conn -> query($consultaM2);
 

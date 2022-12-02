@@ -1,0 +1,17 @@
+.contenedor_interno{
+    display: flex;
+}
+
+.contenedor_left {
+    display: grid;
+    margin-right: 10px;
+}
+
+.contenedor_right {
+    display: grid;
+    margin-left: 10px;
+}
+
+.contenedor_botones{
+    margin-bottom: 150px;
+}

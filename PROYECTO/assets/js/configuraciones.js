@@ -58,3 +58,13 @@ function ConfirmMateria(){
         return false;
     }
 }
+
+function ConfirmUsuario(){
+    var respuesta = confirm("Estas seguro que deseas actualizar este usuario?");
+    if(respuesta == true){
+        return true;
+        
+    }else{
+        return false;
+    }
+}

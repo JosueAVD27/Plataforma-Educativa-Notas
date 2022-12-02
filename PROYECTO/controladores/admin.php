@@ -19,8 +19,9 @@
 
     //usuarios
     $consulta4 = "SELECT U.*, T.tipo, E.estado FROM usuarios AS U
-                    INNER JOIN tipousuario AS T ON U.idTipo = T.idTipo
-                    INNER JOIN estados AS E ON U.idEstado = E.idEstado";
+    INNER JOIN estados AS E ON U.idEstado = E.idEstado
+    INNER JOIN tipousuario AS T ON U.idTipo = T.idTipo
+    ORDER BY idUsuario ASC";
     $resultado4 = $conn -> query($consulta4);
 
     
