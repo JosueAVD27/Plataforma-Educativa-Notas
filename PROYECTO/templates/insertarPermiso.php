@@ -36,8 +36,22 @@ include("controladorAdmin/agregarPermisos.php");
     <section id="contenedor">
         <h3 class="text_usuario">Agregar nuevo permiso</h3>
         <div class="contenedor">
+        <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
+             
+                    <div class="contenedor_form">
+                        <div class="contenedor_interior">
 
-
+                            <div class="contenedor_interior_right">
+                                <label for="">PERMISO:</label>
+                                <input class="input-text" type="text" type="text" name="permiso" placeholder="Ingrese el nuevo permiso" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor_botones">
+                        <button type="submit" class="btn_format btn_enviar contenedor_interior_left" onclick="return ConfirmPerm()">Guardar</button>
+                        <a class="btn_format btn_cancelar contenedor_interior_right" href="configuraciones.php">Cancelar</a>
+                    </div>
+                </form>
 
         </div>
     </section>
