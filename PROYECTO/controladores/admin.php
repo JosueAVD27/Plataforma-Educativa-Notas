@@ -24,5 +24,11 @@
     ORDER BY idUsuario ASC";
     $resultado4 = $conn -> query($consulta4);
 
+    //usuarios
+    $consulta5 = "SELECT idUsuario, nombreUsuario, apellidoUsuario, correoUsuario FROM usuarios WHERE idTipo = 1 AND idEstado = 1";
+    $resultado5 = $conn -> query($consulta5);
     
+    //Materias
+    $consulta6 = "SELECT idMateria, nrc FROM materia WHERE idEstado = 1";
+    $resultado6 = $conn -> query($consulta6);
 ?>

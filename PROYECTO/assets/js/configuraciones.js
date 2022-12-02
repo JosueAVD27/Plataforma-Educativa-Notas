@@ -97,3 +97,14 @@ function ConfirmUsuario(){
         return false;
     }
 }
+
+
+function ConfirmInscripcion(){
+    var respuesta = confirm("Estas seguro que deseas inscribir a este usuario?");
+    if(respuesta == true){
+        return true;
+        
+    }else{
+        return false;
+    }
+}

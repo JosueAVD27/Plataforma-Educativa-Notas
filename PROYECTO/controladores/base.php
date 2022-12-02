@@ -54,7 +54,7 @@
                         <div class="navbar-item-inner-icon-wrapper flexbox">
                             <ion-icon name="newspaper-outline"></ion-icon>
                         </div>
-                        <span class="link-text">Registros</span>
+                        <span class="link-text">Inscripciones</span>
                     </a>
                 </li>
         <?php
