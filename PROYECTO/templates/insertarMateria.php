@@ -36,8 +36,47 @@ include("controladorAdmin/agregarMaterias.php");
     <section id="contenedor">
         <h3 class="text_usuario">Agregar nueva materia</h3>
         <div class="contenedor">
-
-
+        <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
+                    <h6>Actualizar</h6>
+                    <div class="contenedor_form">
+                        <div class="contenedor_interior">
+                            <div class="contenedor_interior_left">
+                                <label for="">NRC:</label>
+                                <input class="input-text" type="text" type="text" name="nrc"
+                                    placeholder="Ingrese el NRC" required>
+                            </div>
+                            <div class="contenedor_interior_right">
+                                <label for="">MATERIA:</label>
+                                <input class="input-text" type="text" type="text" name="materia" placeholder="Nombre materia" required>
+                            </div>
+                            <div class="contenedor_interior_right">
+                                <label for="">DOCENTE: </label>
+                                <select class="input-text" name="docente">
+                                    <option value="<?php echo $usuario ?>">Seleccione</option>
+                                    <?php
+                                    if ($resultadoM2->num_rows > 0) {
+                                        while ($rowM2 = $resultadoM2->fetch_assoc()) {
+                                    ?>
+                                    <option value="<?php echo $rowM2['idUsuario'] ?>">
+                                        <?php echo $rowM2['nombreUsuario'] . ' ' . $rowM2['apellidoUsuario'] ?>
+                                    </option>
+                                    <?php
+                                        }
+                                        $resultadoM2->free();
+                                    } else {
+                                        echo '<p><em> No existen datos registrados</em></p>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor_botones">
+                        <button type="submit" class="btn_format btn_enviar contenedor_interior_left"
+                            onclick="return ConfirmAggMateria()">Guardar</button>
+                        <a class="btn_format btn_cancelar contenedor_interior_right" href="materias.php">Cancelar</a>
+                    </div>
+                </form>
 
         </div>
     </section>
